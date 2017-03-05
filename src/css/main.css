@@ -59,7 +59,7 @@ h2,h3,h4 {
         align-items: center;
         background-color: rgba(0,0,0,0.4);
         position: fixed;
-        overflow: hidden;
+        overflow: scroll;
         top: 0;
         left: 0;
     }
@@ -132,4 +132,8 @@ h2,h3,h4 {
             display: flex;
             justify-content: center;
             margin-top: 10px;
+        }
+        #crash-details {
+            display: none;
+            flex-direction: column;
         }

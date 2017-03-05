@@ -46,6 +46,7 @@
                         <div id="error-mileage"></div>
                         <label for="input-fuel">Fuel type</label>
                         <select name="fuel" id="input-fuel">
+                            <option value="choose-fuel">Choose fuel type</option>
                             <option value="diesel">Diesel</option>
                             <option value="petrol">Petrol</option>
                         </select>
@@ -56,15 +57,20 @@
                         <label for="input-damage">Vehicle damaged</label>
                         <div id="input-damage">
                             <input type="radio" name="damage" value="No">No
-                            <input type="radio" name="damage" value="Yes">Yes
+                            <input type="radio" name="damage" value="Yes" id="radioTrue">Yes
+                        </div>
+                        <div id="crash-details">
+                            <label for="crash-details">Fill in details about crash</label>
+                            <textarea name="crash" id="" cols="30" rows="5"></textarea>
                         </div>
                         <label for="input-price">Price</label>
                         <input type="text" id="input-price" placeholder="Price">
                         <label for="input-currency">Currency</label>
                         <select name="currency" id="input-currency">
-                            <option value="pound">pound</option>
-                            <option value="euro">euro</option>
-                            <option value="usd">usd</option>
+                            <option value="choose-curency">Choose currency</option>
+                            <option value="pound">£</option>
+                            <option value="euro">€</option>
+                            <option value="usd">$</option>
                         </select>
                         <label for="input-description">Description</label>
                         <textarea name="dscription" id="input-description" cols="30" rows="5"

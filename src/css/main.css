@@ -10,6 +10,16 @@ h1 {
 h2,h3,h4 {
     margin: 0
 }
+#error-name {
+    display: none;
+    color: red;
+}
+#error-number {
+    color: red;
+}
+#error-mileage {
+    color: red;
+}
 #add-car {
     font-family:'Roboto', sans-serif;
     padding: 10px 50px;
@@ -117,4 +127,9 @@ h2,h3,h4 {
             height: 40px;
             font-size: 20px;
             cursor: pointer;
+        }
+        #logo-form {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
         }

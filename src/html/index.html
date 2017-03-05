@@ -26,19 +26,24 @@
                 </div>
                 <div class="modal-body">
                     <form class="main-form">
-                        <label for="input-title">Title of announcement</label>
+                        <label for="input-title">Title of announcement*</label>
                         <input type="text" id="input-title" placeholder="Title of announcement">
+                        <div id="error-name">Title is required</div>
                         <label for="input-brand">Make/Brand</label>
                         <select name="brand" id="input-brand">
+                            <option value="choose">Choose brand</option>
                             <option value="ford">Ford</option>
-                            <option value="hyunday">Hyunday</option>
+                            <option value="hyundai">Hyundai</option>
                             <option value="bmw">Bmw</option>
                             <option value="mercedes">Mercedes</option>
                         </select>
+                        <div id="logo-form"><img src="" alt="" id="logo-brand"></div>
                         <label for="input-year">Manufacturing year</label>
-                        <input type="number" id="input-year" placeholder="Manufacturing year">
+                        <input type="text" id="input-year" placeholder="Manufacturing year">
+                        <div id="error-number"></div>
                         <label for="input-mileage">Mileage</label>
-                        <input type="number" id="input-mileage" placeholder="Mileage">
+                        <input type="text" id="input-mileage" placeholder="Mileage">
+                        <div id="error-mileage"></div>
                         <label for="input-fuel">Fuel type</label>
                         <select name="fuel" id="input-fuel">
                             <option value="diesel">Diesel</option>
@@ -54,7 +59,7 @@
                             <input type="radio" name="damage" value="Yes">Yes
                         </div>
                         <label for="input-price">Price</label>
-                        <input type="number" id="input-price" placeholder="Price">
+                        <input type="text" id="input-price" placeholder="Price">
                         <label for="input-currency">Currency</label>
                         <select name="currency" id="input-currency">
                             <option value="pound">pound</option>

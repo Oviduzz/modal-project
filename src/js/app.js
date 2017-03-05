@@ -1,17 +1,21 @@
 var addButton = document.getElementById('add-car'),
     saveButton = document.getElementById('save-car'),
     cancelButton = document.getElementById('cancel-car'),
+
     modal = document.getElementById('modal-block'),
+
     inputTitle =  document.getElementById('input-title'),
     inputYear =  document.getElementById('input-year'),
     inputMileage =  document.getElementById('input-mileage'),
     inputPrice =  document.getElementById('input-price'),
     inputBrand =  document.getElementById('input-brand'),
+
+    numberReg = new RegExp('^\\d+$'),
+
     error = document.getElementById('error-name'),
     errorNumber = document.getElementById('error-number'),
     errorMileage = document.getElementById('error-mileage'),
     errorPrice = document.getElementById('error-price'),
-    numberReg = new RegExp('^\\d+$'),
 
     getImageId = document.getElementById("logo-brand"),
     getDamageBlock = document.getElementById("input-damage"),
@@ -19,6 +23,8 @@ var addButton = document.getElementById('add-car'),
     getColor = document.getElementById("input-color"),
     damageField = document.getElementById("crash-details"),
     colorBox = document.getElementById('color-block');
+
+
 
 
 addButton.onclick = function(){
@@ -61,6 +67,61 @@ inputBrand.onchange = function (){
     }
 };
 
+//we going to use this  for checking if input type is number
+function inputType(value) {
+    if(value === "")
+        return "";
+    else if(value === "true" || value === "false")
+        return "boolean";
+    else if(!Number.isNaN(Number(value)))
+        return "number";
+    else
+        return typeof value;
+}
+
+//set validation image for Title
+inputTitle.onkeydown = function(){
+    setTimeout(function() {
+        if(inputTitle.value.length > 2 ) {
+            inputTitle.style.background = 'url(../img/checkmark.png) no-repeat right 10px center'
+        } else {
+            inputTitle.style.background = 'url(../img/invalid.png) no-repeat right 10px center'
+        }
+    },0)
+};
+
+inputYear.onkeydown = function(){
+
+    setTimeout(function() {
+        if( inputYear.value.length === 4 && inputType(inputYear.value) === 'number') {
+            inputYear.style.background = 'url(../img/checkmark.png) no-repeat right 10px center'
+        } else {
+            inputYear.style.background = 'url(../img/invalid.png) no-repeat right 10px center'
+        }
+    },0)
+};
+
+//set mileage validation image
+inputMileage.onkeydown = function(){
+    setTimeout(function() {
+        if( inputMileage.value.length > 0 && inputType(inputMileage.value) === 'number' ) {
+            inputMileage.style.background = 'url(../img/checkmark.png) no-repeat right 10px center'
+        } else {
+            inputMileage.style.background = 'url(../img/invalid.png) no-repeat right 10px center'
+        }
+    },0)
+};
+
+inputPrice.onkeydown = function(){
+    setTimeout(function() {
+        if( inputPrice.value.length > 0 && inputType(inputPrice.value) === 'number' ) {
+            inputPrice.style.background = 'url(../img/checkmark.png) no-repeat right 10px center'
+        } else {
+            inputPrice.style.background = 'url(../img/invalid.png) no-repeat right 10px center'
+        }
+    },0)
+};
+
 // changing color 'real-time' of square
 getColor.onkeydown = function () {
     setTimeout(function(){
@@ -76,20 +137,20 @@ getColor.onkeydown = function () {
 };
 
 saveButton.onclick = function(){
-    //checking if title has characters to make it valid
-    if (inputTitle.value.length < 1) {
-        error.style.display = 'block';
+    //checking if title has more than 3 characters to make it valid
+    if (inputTitle.value.length < 3) {
+        error.innerHTML = 'Title must be 3 or more characters';
     } else {
-        error.style.display = 'none';
+        error.innerHTML = '';
     }
 
     //checking if filed is number
-    if (numberReg.test(inputYear.value) === false && inputYear.value.length > 0) {
-        errorNumber.innerHTML = 'This field must be a number';
+    if (numberReg.test(inputYear.value) === false ) {
+        errorNumber.innerHTML = 'This field must be a number with 4 characters';
     } else {
         errorNumber.innerHTML = '';
     }
-    if (numberReg.test(inputMileage.value) === false && inputMileage.value.length > 0){
+    if (numberReg.test(inputMileage.value) === false ){
         errorMileage.innerHTML = 'This field must be a number';
     } else {
         errorMileage.innerHTML = '';

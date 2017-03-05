@@ -10,19 +10,7 @@ h1 {
 h2,h3,h4 {
     margin: 0
 }
-#error-name {
-    display: none;
-    color: red;
-}
-#error-number {
-    color: red;
-}
-#error-mileage {
-    color: red;
-}
-#error-price {
-    color: red;
-}
+
 #add-car {
     font-family:'Roboto', sans-serif;
     padding: 10px 50px;
@@ -55,6 +43,7 @@ h2,h3,h4 {
    display: none;
 }
     #modal-car {
+        z-index: 1;
         width: 100%;
         height: 100%;
         display: flex;
@@ -147,3 +136,10 @@ h2,h3,h4 {
             margin-top: 5px;
             display: none;
         }
+        #input-title, #input-year, #input-mileage, #input-price {
+            background: url(../img/invalid.png) no-repeat right 10px center;
+        }
+
+#error-name, #error-number, #error-mileage, #error-price {
+    color: red;
+}

@@ -13,59 +13,66 @@
         <img src="../img/logo-black.png" alt="">
     </div>
     <h1>Add cars application</h1>
-    <button class="add-car">Add car</button>
-    <div id="modal-car">
-        <div class="modal-wrapper">
-            <div class="modal-header">
-                <h2 class="title">Add product</h2>
-                <h3 class="subtitle">Second-hand cars</h3>
-                <h4 class="category">Automobiles</h4>
+    <button id="add-car">Add car</button>
+    <div id="modal-block">
+        <div id="modal-car">
+            <div class="modal-wrapper">
+                <div class="modal-header">
+                    <div class="main-details">
+                        <h2 class="title">Add product</h2>
+                        <h3 class="subtitle">Second-hand cars</h3>
+                    </div>
+                    <h4 class="category">Automobiles</h4>
+                </div>
+                <div class="modal-body">
+                    <form class="main-form">
+                        <label for="input-title">Title of announcement</label>
+                        <input type="text" id="input-title" placeholder="Title of announcement">
+                        <label for="input-brand">Make/Brand</label>
+                        <select name="brand" id="input-brand">
+                            <option value="ford">Ford</option>
+                            <option value="hyunday">Hyunday</option>
+                            <option value="bmw">Bmw</option>
+                            <option value="mercedes">Mercedes</option>
+                        </select>
+                        <label for="input-year">Manufacturing year</label>
+                        <input type="number" id="input-year" placeholder="Manufacturing year">
+                        <label for="input-mileage">Mileage</label>
+                        <input type="number" id="input-mileage" placeholder="Mileage">
+                        <label for="input-fuel">Fuel type</label>
+                        <select name="fuel" id="input-fuel">
+                            <option value="diesel">Diesel</option>
+                            <option value="petrol">Petrol</option>
+                        </select>
+                        <label for="input-color">Color</label>
+                        <input type="text" id="input-color" placeholder="Color">
+                    </form>
+                    <form class="second-form">
+                        <label for="input-damage">Vehicle damaged</label>
+                        <div id="input-damage">
+                            <input type="radio" name="damage" value="No">No
+                            <input type="radio" name="damage" value="Yes">Yes
+                        </div>
+                        <label for="input-price">Price</label>
+                        <input type="number" id="input-price" placeholder="Price">
+                        <label for="input-currency">Currency</label>
+                        <select name="currency" id="input-currency">
+                            <option value="pound">pound</option>
+                            <option value="euro">euro</option>
+                            <option value="usd">usd</option>
+                        </select>
+                        <label for="input-description">Description</label>
+                        <textarea name="dscription" id="input-description" cols="30" rows="5"
+                                  placeholder="Description"></textarea>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button class="modal-button" id="save-car">Save</button>
+                    <button class="modal-button" id="cancel-car">Cancel</button>
+                </div>
             </div>
-            <div class="modal-body">
-                <form class="main-form">
-                    <label for="input-title">Title of announcement</label>
-                    <input type="text" id="input-title" placeholder="Title of announcement">
-                    <label for="input-brand">Make/Brand</label>
-                    <select name="brand" id="input-brand">
-                        <option value="ford">Ford</option>
-                        <option value="hyunday">Hyunday</option>
-                        <option value="bmw">Bmw</option>
-                        <option value="mercedes">Mercedes</option>
-                    </select>
-                    <label for="input-year">Manufacturing year</label>
-                    <input type="number" id="input-year" placeholder="Manufacturing Year">
-                    <label for="input-mileage">Mileage</label>
-                    <input type="number" id="input-mileage" placeholder="Mileage">
-                    <label for="input-fuel">Fuel type</label>
-                    <select name="fuel" id="input-fuel">
-                        <option value="diesel">Diesel</option>
-                        <option value="petrol">Petrol</option>
-                    </select>
-                    <label for="input-color">Color</label>
-                    <input type="text" id="input-color" placeholder="Color">
-                </form>
-                <form class="second-form">
-                    <label for="input-damage">Vehicle damaged</label>
-                    <input type="radio" name="damage" id="input-damage" value="No"> No
-                    <input type="radio" name="damage" value="Yes"> Yes
-                    <label for="input-price">price</label>
-                    <input type="number" id="input-price" placeholder="Price">
-                    <label for="input-currency">Currency</label>
-                    <select name="currency" id="input-currency">
-                        <option value="pound">pound</option>
-                        <option value="euro">euro</option>
-                        <option value="usd">usd</option>
-                    </select>
-                    <label for="input-description">Description</label>
-                    <textarea name="dscription" id="input-description" cols="30" rows="10">Description</textarea>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button>Save</button>
-                <button>Cancel</button>
-            </div>
-        </div>
 
+        </div>
     </div>
 </div>
 

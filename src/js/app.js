@@ -11,7 +11,10 @@ var addButton = document.getElementById('add-car'),
     errorMileage = document.getElementById('error-mileage'),
     numberReg = new RegExp('^\\d+$'),
 
-    getImageId = document.getElementById("logo-brand");
+    getImageId = document.getElementById("logo-brand"),
+    getDamageBlock = document.getElementById("input-damage"),
+    getDamage = document.getElementById("radioTrue"),
+    damageField = document.getElementById("crash-details");
 
 
 addButton.onclick = function(){
@@ -20,6 +23,15 @@ addButton.onclick = function(){
 
 cancelButton.onclick = function(){
     modal.style.display = 'none';
+};
+
+//show details field if vehicle damage is checked 'Yes'
+getDamageBlock.onclick = function (){
+    if (getDamage.checked){
+        damageField.style.display = 'flex';
+    } else {
+        damageField.style.display = 'none';
+    }
 };
 
 // set image src by what option value is chosen

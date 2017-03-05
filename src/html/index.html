@@ -26,7 +26,7 @@
                 </div>
                 <div class="modal-body">
                     <form class="main-form">
-                        <label for="input-title">Title of announcement*</label>
+                        <label for="input-title">Title of announcement(required)</label>
                         <input type="text" id="input-title" placeholder="Title of announcement">
                         <div id="error-name">Title is required</div>
                         <label for="input-brand">Make/Brand</label>
@@ -52,12 +52,15 @@
                         </select>
                         <label for="input-color">Color</label>
                         <input type="text" id="input-color" placeholder="Color">
+                        <div id="color-block"></div>
                     </form>
                     <form class="second-form">
                         <label for="input-damage">Vehicle damaged</label>
                         <div id="input-damage">
-                            <input type="radio" name="damage" value="No">No
-                            <input type="radio" name="damage" value="Yes" id="radioTrue">Yes
+                            <label for="radioFlsle">No</label>
+                            <input type="radio" name="damage" value="No" id="radioFlsle">
+                            <label for="radioTrue">Yes</label>
+                            <input type="radio" name="damage" value="Yes" id="radioTrue">
                         </div>
                         <div id="crash-details">
                             <label for="crash-details">Fill in details about crash</label>
@@ -65,6 +68,7 @@
                         </div>
                         <label for="input-price">Price</label>
                         <input type="text" id="input-price" placeholder="Price">
+                        <div id="error-price"></div>
                         <label for="input-currency">Currency</label>
                         <select name="currency" id="input-currency">
                             <option value="choose-curency">Choose currency</option>

@@ -48,16 +48,16 @@ getDamageBlock.onclick = function (){
 inputBrand.onchange = function (){
     switch(inputBrand.options[inputBrand.selectedIndex].value){
         case 'hyundai':
-            getImageId.src = '../img/hyundai-logo.png';
+            getImageId.src = 'src/img/hyundai-logo.png';
             break;
         case 'ford':
-            getImageId.src = '../img/ford-logo.png';
+            getImageId.src = 'src/img/ford-logo.png';
             break;
         case 'bmw':
-            getImageId.src = '../img/bmw-logo.png';
+            getImageId.src = 'src/img/bmw-logo.png';
             break;
         case 'mercedes':
-            getImageId.src = '../img/mercedes-logo.png';
+            getImageId.src = 'src/img/mercedes-logo.png';
             break;
         case 'choose':
             getImageId.src = '';
@@ -83,9 +83,10 @@ function inputType(value) {
 inputTitle.onkeydown = function(){
     setTimeout(function() {
         if(inputTitle.value.length > 2 ) {
-            inputTitle.style.background = 'url(../img/checkmark.png) no-repeat right 10px center'
+            inputTitle.classList.add('error-valid')
         } else {
-            inputTitle.style.background = 'url(../img/invalid.png) no-repeat right 10px center'
+            inputTitle.classList.remove('error-valid');
+            inputTitle.classList.add('error-invalid')
         }
     },0)
 };
@@ -94,9 +95,10 @@ inputYear.onkeydown = function(){
 
     setTimeout(function() {
         if( inputYear.value.length === 4 && inputType(inputYear.value) === 'number') {
-            inputYear.style.background = 'url(../img/checkmark.png) no-repeat right 10px center'
+            inputYear.classList.add('error-valid')
         } else {
-            inputYear.style.background = 'url(../img/invalid.png) no-repeat right 10px center'
+            inputYear.classList.remove('error-valid');
+            inputYear.classList.add('error-invalid')
         }
     },0)
 };
@@ -105,9 +107,10 @@ inputYear.onkeydown = function(){
 inputMileage.onkeydown = function(){
     setTimeout(function() {
         if( inputMileage.value.length > 0 && inputType(inputMileage.value) === 'number' ) {
-            inputMileage.style.background = 'url(../img/checkmark.png) no-repeat right 10px center'
+            inputMileage.classList.add('error-valid')
         } else {
-            inputMileage.style.background = 'url(../img/invalid.png) no-repeat right 10px center'
+            inputMileage.classList.remove('error-valid');
+            inputMileage.classList.add('error-invalid')
         }
     },0)
 };
@@ -115,9 +118,10 @@ inputMileage.onkeydown = function(){
 inputPrice.onkeydown = function(){
     setTimeout(function() {
         if( inputPrice.value.length > 0 && inputType(inputPrice.value) === 'number' ) {
-            inputPrice.style.background = 'url(../img/checkmark.png) no-repeat right 10px center'
+            inputPrice.classList.add('error-valid')
         } else {
-            inputPrice.style.background = 'url(../img/invalid.png) no-repeat right 10px center'
+            inputPrice.classList.remove('error-valid');
+            inputPrice.classList.add('error-invalid')
         }
     },0)
 };
@@ -161,5 +165,7 @@ saveButton.onclick = function(){
     } else {
         errorPrice.innerHTML = '';
     }
+
+    console.log(error.value.length);
 
 };

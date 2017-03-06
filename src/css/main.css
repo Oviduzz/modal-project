@@ -136,10 +136,15 @@ h2,h3,h4 {
             margin-top: 5px;
             display: none;
         }
-        #input-title, #input-year, #input-mileage, #input-price {
-            background: url(../img/invalid.png) no-repeat right 10px center;
-        }
+
 
 #error-name, #error-number, #error-mileage, #error-price {
     color: red;
+}
+
+.error-invalid {
+    background: url(../img/invalid.png) no-repeat right 10px center;
+}
+.error-valid {
+    background: url(../img/checkmark.png) no-repeat right 10px center;
 }

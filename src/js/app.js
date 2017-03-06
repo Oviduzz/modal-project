@@ -1,6 +1,7 @@
 var addButton = document.getElementById('add-car'),
     saveButton = document.getElementById('save-car'),
     cancelButton = document.getElementById('cancel-car'),
+    newCarButton = document.getElementById('new-car-button'),
 
     modal = document.getElementById('modal-block'),
 
@@ -22,13 +23,29 @@ var addButton = document.getElementById('add-car'),
     getDamage = document.getElementById("radioTrue"),
     getColor = document.getElementById("input-color"),
     damageField = document.getElementById("crash-details"),
-    colorBox = document.getElementById('color-block');
+    colorBox = document.getElementById('color-block'),
 
+    newCar = document.getElementById('new-car'),
+    detailsWrapper = document.getElementById('details-wrapper'),
+    input = document.getElementsByTagName('input'),
+    select = document.getElementsByTagName('select');
 
 
 
 addButton.onclick = function(){
     modal.style.display = 'block';
+};
+newCarButton.onclick = function(){
+    modal.style.display = 'block';
+    getImageId.src = '';
+    colorBox.style.display = 'none';
+    input = [].slice.call(input);
+    input.forEach(function(inp){
+        inp.value = '';
+        inp.classList.remove('error-valid');
+        inp.classList.remove('error-invalid');
+    });
+
 };
 
 cancelButton.onclick = function(){
@@ -83,7 +100,8 @@ function inputType(value) {
 inputTitle.onkeydown = function(){
     setTimeout(function() {
         if(inputTitle.value.length > 2 ) {
-            inputTitle.classList.add('error-valid')
+            inputTitle.classList.add('error-valid');
+            inputTitle.classList.remove('error-invalid')
         } else {
             inputTitle.classList.remove('error-valid');
             inputTitle.classList.add('error-invalid')
@@ -118,6 +136,7 @@ inputMileage.onkeydown = function(){
 inputPrice.onkeydown = function(){
     setTimeout(function() {
         if( inputPrice.value.length > 0 && inputType(inputPrice.value) === 'number' ) {
+
             inputPrice.classList.add('error-valid')
         } else {
             inputPrice.classList.remove('error-valid');
@@ -165,7 +184,9 @@ saveButton.onclick = function(){
     } else {
         errorPrice.innerHTML = '';
     }
-
-    console.log(error.value.length);
-
+    if(document.querySelectorAll(".error-valid").length > 2) {
+        modal.style.display = 'none';
+        newCar.style.display = 'flex';
+        detailsWrapper.style.display = 'none'
+    }
 };

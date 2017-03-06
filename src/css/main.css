@@ -28,6 +28,31 @@ h2,h3,h4 {
         color: #00a0e3 ;
         transition: all 0.2s ease-in-out;
     }
+#new-car {
+    font-size: 60px;
+    color: #00a0e3;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+}
+    #new-car button {
+        font-family:'Roboto', sans-serif;
+        padding: 10px 50px;
+        border-radius: 50px;
+        background-color: #00a0e3;
+        border: 1px solid #00a0e3;
+        color: #ffffff;
+        font-size: 20px;
+        cursor: pointer;
+        outline: none;
+    }
+        #new-car button:hover {
+            background-color: #ffffff;
+            border: 1px solid #00a0e3;
+            color: #00a0e3 ;
+            transition: all 0.2s ease-in-out;
+        }
+
 #main-wrapper {
     background-color: #DADFE1;
     display: flex;
@@ -86,7 +111,7 @@ h2,h3,h4 {
             display: flex;
             flex-direction: column;
         }
-        #modal-car input, select, textarea {
+        input, select, textarea {
             padding: 10px;
             border-radius: 5px;
             outline: none;
@@ -136,7 +161,11 @@ h2,h3,h4 {
             margin-top: 5px;
             display: none;
         }
-
+        #details-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
 
 #error-name, #error-number, #error-mileage, #error-price {
     color: red;
@@ -144,7 +173,9 @@ h2,h3,h4 {
 
 .error-invalid {
     background: url(../img/invalid.png) no-repeat right 10px center;
+    border: 1px solid red;
 }
 .error-valid {
     background: url(../img/checkmark.png) no-repeat right 10px center;
+    border: 1px solid #00a0e3;
 }
